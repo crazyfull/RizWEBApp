@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Authentication required</title>
+<meta name="author" content="Mojtaba">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/rsrc/auth/res/auth.css" rel="stylesheet">
+<script src="/rsrc/auth/hash/sha3.min.js"></script>
+</head>
+<body>
+
+  <div id="FlexGrid1">
+    <div class="alert-msg-frame">
+      <div id="alertMsg" class="alert-msg animate-bottom">
+        <div class="alert-icon"><i class="material-icons" style="font-size: 32px;">warning</i></div>
+        <div class="alert-content">error</div>
+      </div>
+    </div>
+    <div id="FlexGrid1-grid">
+      <div class="up">
+        <div id="wb_Heading1">
+          <div class="loader-frame">
+            <div id="loading" class="loader"></div>
+          </div>
+          <h1 id="Heading1">Authentication required</h1>
+        </div>
+      </div>
+      <div class="header">
+        <input type="text" id="u" name="u" maxlength="32" tabindex="1" spellcheck="false" placeholder="username">
+        <input type="password" id="p" name="p" maxlength="32" tabindex="2" spellcheck="false" placeholder="password">
+      </div>
+      <div class="down">
+        <input type="button" tabindex="3" id="btnLogin" class="btn" value="Login">
+      </div>
+    </div>
+  </div>
+
+
+<script>
+document.onkeyup = function() {
+    // your code
+	
+    hideAlert();
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+ //   showAlert();
+});
+
+document.getElementById("btnLogin").addEventListener("click", plogin);
+document.getElementsByClassName('header')[0].addEventListener("keyup", function(event) {
+if (event.keyCode === 13) {
+     event.preventDefault();
+     plogin();
+    }
+});
+
+function hideAlert() {
+    var x = document.getElementById("alertMsg");
+    x.style.display = "none";
+}
+
+function showAlert(msg) {
+    document.getElementById("alertMsg").style.display = "flex";
+    document.getElementById("u").value = '';
+    document.getElementById("p").value = '';
+	var msgErr = document.getElementsByClassName("alert-content")[0];
+	msgErr.textContent = msg;
+	hideLoading();
+}
+	
+function showLoading() {
+    document.getElementById("loading").style.display = "block";
+	document.getElementById("btnLogin").disabled = true;;
+}
+function hideLoading() {
+    document.getElementById("loading").style.display = "none";
+	document.getElementById("btnLogin").disabled = false;;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function plogin() {
+
+    //
+    var u = document.getElementById("u").value;
+    var p = document.getElementById("p").value;
+    var uID = getCookie("uID");
+
+    if (4 > u.length || 1 > p.length) {
+        showAlert('Error: Please enter a valid username and password');
+        return false;
+    }
+
+    showLoading();
+
+    var acHash = sha512.update(u).update(p).hex();
+    var http = new XMLHttpRequest();
+    var params = 'usr=' + u + '&AI=' + sha512.update(acHash).update(uID).hex();
+    http.open('POST', '', true);
+    http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    http.onload = function() {
+        //
+        //Alert("can't connect to server!" + http.status);
+        switch (http.status) {
+            case 200:
+                //
+                window.location.href = window.location.href;
+                break;
+            default:
+                //var myHeader = http.getResponseHeader('Content-Type');
+                showAlert(http.responseText);
+
+        }
+    }
+
+    http.onreadystatechange = function() { //Call a function when the state changes.
+        if (http.readyState == 4) {
+            //alert(http.responseText);
+        }
+    }
+    http.send(params);
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(fonts/roboto1.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(fonts/roboto2.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(fonts/roboto3.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(fonts/roboto4.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(fonts/roboto5.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(fonts/roboto6.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(fonts/roboto7.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+h1 {
+  border-bottom: 1px solid #c0c0c0;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  white-space: nowrap;
+}
+
+a.icon {
+  -webkit-padding-start: 2em;
+  -moz-padding-start: 2em;
+  -khtml-padding-start: 2em;
+  -o-padding-start: 2em;
+  text-decoration: none;
+  padding-bottom: 1em;
+  padding-top: 0.4em;
+  color: #0078ff;
+}
+
+a.icon:hover {
+  text-decoration: underline;
+  color: #0053b3
+}
+
+a.file {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACiklEQVR42p2Vy27TQBSGz3kE3oHuacKTsGVTpKor2LFGIEGRuEkIVmVBV+xYsECCShUssiFBbLgEmqZ2Ynvs+FKaiERJSXwYe8aJnXgci0nGnhk5/3fOP2ccBNme7b2k6I6IULYREZiG+YXfdx/cvfU675m52vO9fdreulpaPGpvDz7CxsZFqNVqpGvaq9lstv34/p1xIcA5HfDQouAI+W1pTOJLIQ5HIzppa1i9XImTqX+q4+dG481kMrny9OG9UA0IBpEgpAQhOycIeR8Nh6BpHaxWKyRUED4cHkKz2bzJ7XqiBNh+Pw6ZS6HQpKUMePwh4YhnoOsdrFQ2IxX+MOL533M4ePcedF2/8Gj39lkugHln+QCZRTzjgPF4TJqm4+bmpagwCGV1NBp16jk9vL6zhbkAy/1NaTvmFi312WwKrVZ7peSGwz806PfVALN3CnIrUYrJDOYgOQ+JVw1Op1MOC+O1SIdZFjHG1ADDCVIWUdai7Dy9Ph8bXYNM01QDurZPGTsydq3vHACWZakBHeaBKjoQJZrYl5+BaRCzCizSrR6VjTbp6Qy5PcCYrQZopqPMYN0eQAywyLYLAO2uDbL6xY+FJ6U32eIAx3HUgOMOA1V0y2XKpzg/fAmAl2nhQWvpZqk9WKksrhG9o/g5ALfnqgFHmlF6D5LDGB8zrhVdbYuR6xYAfrW7+QBYswcJgDHyXE8NaB7rtM6KXNvkus1s8L0CwI+WtnaTQxFtej3OIBrzEiXf89WA70cna0+ysAwWL8SYIi2yHQr8AsC3n+2FRaCoIiG5sA/kmH8c24HAD9SAr82WjHq1xilrR5KJOJfyD8qJMgjyAC/2hSqgiEhe/7fd2LkWa/8DCa+6VZM45WEAAAAASUVORK5CYII=") left top no-repeat;
+}
+
+a.dir {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABmUlEQVR42r3VzyuDcRwH8PczSa7spv0BLk64SMlBUX7TcjE/IpsSoS1hiSHbKD1kM0tII3FwVLu4SZKLUsqNlHJZiRnvZ55v5rRn9bVPfQ5PfZ/v6/P5Pk/fj4J/DiVbQAuzygD4wFxjvmUCVNRU4nzaCcWUyyeTnlp8pWQCOIsC7iX4+TSWCeAILWOtuyP94lgMMBfj/v0D4TRLWQ5YDi40YHDTA7WrxVhFN7c8pyd9i8Rvd6ndxuOAN4yPyzuUJ4GAE2pnXfrNE59AfpmxP2MjCNhH0Z8E1u1Qbc0p5y9S+VtZTgGQZzHWaWAbGBjRgS0f1B6bsReNRmCHgOggvALVyEfOCNglMC4APwGrZGCPgEsAXgLtkoF9AhMCWCTQJhmIEJgUwDyBVsnAAYFpAcwRaJYMHBKYEcAMgSbJwBGBWQG4CTRIBo4JeAQwRaBeMnBCYEEHQi4CtXKB4CnvIt8P0KcOI+holAuo7GBoFb0aYCky48paDXOOpAEa5/UdieL58QWlYstCZgnkzWhtQlwzX7M29P8tvgG77Ybp5oSvTgAAAABJRU5ErkJggg== ") left top no-repeat;
+}
+
+a.back {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAHdElNRQfkAw0NOxNEH2yMAAAA0UlEQVQ4y92RPQ/BUBSGH2wsGukq6WgxGSQSu4jF0I0fwORnGAySDjUyWDoIidUoJpvBZPERa3eugdalN80dxXm3c5735rznwr+WTUcfNpggWOjidU4IXUOWEeIlDUODc4gLNhRIxr09luBAPit65KN4jaMCD3TDoyTjTgwc6I5D5onH7ClVgi5bLL2V3jpgxoeOavZ51os0WmJgUaRCiwH7sF+WLTmm4WD+laLKGoHA/Y7X5Ko0QIo+gl30Iiae0gDg4qvPaNNW9tMMtb7hx+sB83SNQ29QNNQAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjAtMDMtMTNUMTM6NTk6MTkrMDA6MDD1EdCXAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIwLTAzLTEzVDEzOjU5OjE5KzAwOjAwhExoKwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAASUVORK5CYII= ") left top no-repeat;
+font-size: 1em;
+margin: 0.4em;
+font-weight: bold;
+}
+
+
+html[dir=rtl] a {
+  background-position-x: right;
+}
+
+[class^=clum] {
+  display: inline-block;
+  vertical-align: top;
+  font-family: 'Roboto';
+  color: #34495E;
+}
+
+.clum-bold {
+  font-weight: bold;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #000000;
+  font-family: Roboto, sans-serif;
+  font-weight: normal;
+  font-size: 0.9em;
+  line-height: 1.2875;
+  margin: 0;
+}
+
+#Table1 {
+  border: 0px solid #FFFFFF;
+  background-color: #fefefe;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  margin: 0;
+  display: table;
+  width: 100%;
+  height: 20px;
+  z-index: 5;
+"
+}
+#Table1 td
+{  
+  padding: 5px;
+  padding-top: 8px;
+  padding-bottom: 3px;
+}
+
+#Table1 td div
+{
+   white-space: nowrap;
+}
+#Table1 .celltop
+{
+   background-color: #f8fafc;
+   border: 0px #dbe6f0 solid;
+   border-bottom-width: 1px;
+   border-top-width: 1px;
+   text-align: left;
+   vertical-align: middle;
+   font-weight: bold;
+   padding: 5px;
+}
+#Table1 .cell1
+{
+   background-color: transparent;
+   border-top-width: 1px;
+   border-right-width: 0px;
+   border-bottom-width: 0px;
+   border-left-width: 0px;
+   border-style: solid;
+   border-color: #f9f9f9;
+   text-align: left;
+   vertical-align: middle;
+}
+#Table1 tr:nth-child(odd)
+{
+   background-color: #FFFFFF;
+}
+#Table1 tr:hover
+{
+  # background-color: #F9FAFB;
+}
